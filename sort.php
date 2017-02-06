@@ -36,7 +36,7 @@ function quickSort($arr){
 	return array_merge($left,[$base],$right);
 }
 
-print_r(bubbleSort($arr));
+// print_r(bubbleSort($arr));
 
 
 //冒泡排序
@@ -50,20 +50,22 @@ function bubbleSort($arr){
 		return $arr;
 
 	//循环需要冒泡的轮数
-	for($i=1;$i<$count;$i++){
-		//循环每轮冒出一个数
-		for($j=0;$j<$count-$i;$j++){
+	for($i=0;$i<$count;$i++){
+		
+		for($j=0;$j<$count-$i-1;$j++){
 
 			//相邻数比较、如果第一个大于第二个就互换位置、总之前面的要小于后面的
 			if($arr[$j] > $arr[$j+1]){
-				$next=$arr[$j+1];
+				$min=$arr[$j+1];
 				$arr[$j+1]=$arr[$j];
-				$arr[$j]=$next;
+				$arr[$j]=$min;
 			}
+
 		}
 	}
 
 	return $arr;
 }
+
 
 print_r(bubbleSort($arr));
